@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AllListsViewController: UIViewController {
+class AllListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
+    var allLists = []
     
 
     override func viewDidLoad() {
@@ -19,7 +20,15 @@ class AllListsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    //table view datasource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
