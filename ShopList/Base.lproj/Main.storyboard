@@ -51,6 +51,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4tz-dn-xDA" id="HXG-wp-TJU"/>
+                                    <outlet property="delegate" destination="4tz-dn-xDA" id="udA-9U-xWH"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
