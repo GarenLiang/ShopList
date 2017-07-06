@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class AllListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
-    var allLists = []
+    var allLists:[ShoppingList] = []
+    var nameTextField: UITextField!
     
 
     override func viewDidLoad() {
@@ -36,6 +38,38 @@ class AllListsViewController: UIViewController, UITableViewDataSource, UITableVi
     //Action
     
     @IBAction func addBarButtonItemPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Create Shopping List", message: "Enter the shopping list name", preferredStyle: .alert)
+        alertController.addTextField { (nameTextField) in
+            nameTextField.placeholder = "Name"
+            self.nameTextField = nameTextField
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            
+        }
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            if self.nameTextField.text != "" {
+                self.createShoppingList()
+            } else {
+                //show message
+                KRProgressHUD.showWarning(message: "name is empty")
+            }
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    //helper function
+    func createShoppingList() {
+        let shoppingList = ShoppingList(_name: nameTextField.text!)
+        shoppingList.saveItemInBackground(shoppingList: shoppingList) { (error) in
+            if error != nil {
+                KRProgressHUD.showError(message: "Error creating shopping list")
+                return
+            }
+        }
     }
 
     }

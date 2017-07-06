@@ -99,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490A33191F0DBBC20045F76C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49C2929B1F0B8B0100DAB5EB /* ShoppingList.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		490A331A1F0DBBE60045F76C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				490A33141F0DAB440045F76C /* Constants.swift */,
+				490A33161F0DAD720045F76C /* Utilities.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		491A73B01F0B468E008539C2 = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +149,8 @@
 				491A73C81F0B468E008539C2 /* Info.plist */,
 				491A73EA1F0B4D61008539C2 /* GoogleService-Info.plist */,
 				49C292991F0B778E00DAB5EB /* ShoppingItemViewController.swift */,
-				49C2929B1F0B8B0100DAB5EB /* ShoppingList.swift */,
-				490A33141F0DAB440045F76C /* Constants.swift */,
-				490A33161F0DAD720045F76C /* Utilities.swift */,
+				490A33191F0DBBC20045F76C /* Model */,
+				490A331A1F0DBBE60045F76C /* Helpers */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
