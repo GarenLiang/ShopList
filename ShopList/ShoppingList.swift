@@ -34,9 +34,7 @@ class ShoppingList {
         ownerId = dictionary[kOWNERID] as! String
     }
     func dictionaryFromItem(item: ShoppingList) -> NSDictionary {
-        return NSDictionary(objects: [item.name, item.totalPrice, item.totalItems, item.id,
-                                      dateFormatter().string(from: item.date), item.ownerId], forKey: [kNAME as NSCopying,
-                                      kTOTALPRICE as NSCopying, kTOTALITEMS as NSCopying, kSHOPPINGLISTID as NSCopying, kDATE as NSCopying, kOWNERID as NSCopying])
+        return NSDictionary(objects: [item.name, item.totalPrice, item.totalItems, item.id,dateFormatter().string(from: item.date), item.ownerId], forKeys: [kNAME as NSCopying,kTOTALPRICE as NSCopying, kTOTALITEMS as NSCopying, kSHOPPINGLISTID as NSCopying, kDATE as NSCopying, kOWNERID as NSCopying])
     }
     
     func saveItemInBackground(shoppingList: ShoppingList, completion: @escaping (_ error: Error?) -> Void) {
