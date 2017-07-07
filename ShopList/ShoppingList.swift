@@ -29,7 +29,7 @@ class ShoppingList {
         name = dictionary[kNAME] as! String
         totalPrice = dictionary[kTOTALPRICE] as! Float
         totalItems = dictionary[kTOTALITEMS] as! Int
-        id = dictionary[kSHOPPINGLIST] as! String
+        id = dictionary[kSHOPPINGLISTID] as! String
         date = dateFormatter().date(from: dictionary[kDATE] as! String)!
         ownerId = dictionary[kOWNERID] as! String
     }
