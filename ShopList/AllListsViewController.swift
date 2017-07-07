@@ -30,10 +30,12 @@ class AllListsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!
+            ListTableViewCell
         let shoppingList = allLists[indexPath.row]
         
-        cell.textLabel?.text = shoppingList.name
+        cell.bindData(item: shoppingList)
+        
         return cell
     }
     override func didReceiveMemoryWarning() {
