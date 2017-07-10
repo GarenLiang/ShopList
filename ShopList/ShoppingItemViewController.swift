@@ -13,17 +13,14 @@ class ShoppingItemViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var itemsLeftLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    var shoppingList: ShoppingList!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     //action
     @IBAction func addBarButtonItemPressed(_ sender: Any) {
