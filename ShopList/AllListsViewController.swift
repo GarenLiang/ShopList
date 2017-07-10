@@ -38,10 +38,14 @@ class AllListsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
+    // tableview delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "shoppingListToShoppingItemSeg", sender: indexPath)
     }
+    
+    
     //Action
     
     @IBAction func addBarButtonItemPressed(_ sender: Any) {
@@ -87,6 +91,16 @@ class AllListsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             self.tableView.reloadData()
         })
+    }
+    //Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shoppingListToShoppingItemSeg" {
+            let indexPath = sender as! IndexPath
+            let shoppingList = allLists[indexPath.row]
+            
+            let vc = segue.destination as! ShoppingItemViewController
+            vc.shoppingList = shoppingList
+        }
     }
     //helper function
     func createShoppingList() {

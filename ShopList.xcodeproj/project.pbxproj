@@ -153,7 +153,7 @@
 				49C292991F0B778E00DAB5EB /* ShoppingItemViewController.swift */,
 				490A33191F0DBBC20045F76C /* Model */,
 				490A331A1F0DBBE60045F76C /* Helpers */,
-				499985EA1F0F747F00E26A06 /* ListTableViewCell.swift */,
+				49EE11A81F1356E40066A05F /* CustomCells */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
@@ -174,6 +174,14 @@
 				491A73DE1F0B468E008539C2 /* Info.plist */,
 			);
 			path = ShopListUITests;
+			sourceTree = "<group>";
+		};
+		49EE11A81F1356E40066A05F /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				499985EA1F0F747F00E26A06 /* ListTableViewCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		A206620EAFDF3EEB5D4D78E8 /* Pods */ = {
