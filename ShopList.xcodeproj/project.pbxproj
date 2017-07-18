@@ -156,10 +156,10 @@
 				491A73C81F0B468E008539C2 /* Info.plist */,
 				491A73EA1F0B4D61008539C2 /* GoogleService-Info.plist */,
 				49C292991F0B778E00DAB5EB /* ShoppingItemViewController.swift */,
+				493135031F1DE22C003371C6 /* AddItemViewController.swift */,
 				490A33191F0DBBC20045F76C /* Model */,
 				490A331A1F0DBBE60045F76C /* Helpers */,
 				49EE11A81F1356E40066A05F /* CustomCells */,
-				493135031F1DE22C003371C6 /* AddItemViewController.swift */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";

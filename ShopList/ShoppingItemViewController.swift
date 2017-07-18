@@ -24,6 +24,10 @@ class ShoppingItemViewController: UIViewController {
 
     //action
     @IBAction func addBarButtonItemPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemVC") as! AddItemViewController
+        
+        vc.shoppingList = self.shoppingList
+        self.present(vc, animated: true, completion: nil)
     }
     
 

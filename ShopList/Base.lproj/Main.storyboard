@@ -184,7 +184,7 @@
         <!--Add Item View Controller-->
         <scene sceneID="3fm-2G-ejR">
             <objects>
-                <viewController id="z4W-mM-mGV" customClass="AddItemViewController" customModule="ShopList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddItemVC" id="z4W-mM-mGV" customClass="AddItemViewController" customModule="ShopList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7yY-WR-uqC"/>
                         <viewControllerLayoutGuide type="bottom" id="MLZ-mc-ELw"/>
@@ -206,6 +206,9 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="z4W-mM-mGV" eventType="touchUpInside" id="6Y6-zr-aCj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exu-El-DuP">
                                         <rect key="frame" x="16" y="17" width="51" height="30"/>
@@ -216,6 +219,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="z4W-mM-mGV" eventType="touchUpInside" id="I3A-Og-kjI"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxO-ur-BWn">
                                         <rect key="frame" x="151" y="22" width="73" height="21"/>
@@ -315,6 +321,13 @@
                             <constraint firstItem="4Rr-ke-Fii" firstAttribute="leading" secondItem="1cY-bE-WmX" secondAttribute="leading" id="zHS-69-vrk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="extraInfoTextField" destination="TYn-9a-V7i" id="Urm-WE-8sE"/>
+                        <outlet property="itemImageView" destination="T20-Tv-bLb" id="vgC-Wt-x4M"/>
+                        <outlet property="nameTextFiled" destination="9ou-Gs-3Qo" id="gzl-O6-F44"/>
+                        <outlet property="priceTextField" destination="ytG-yV-qCU" id="A3w-va-Aak"/>
+                        <outlet property="quantityTextField" destination="dGI-6i-AiE" id="K3O-62-DIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTm-jC-3NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

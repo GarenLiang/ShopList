@@ -7,29 +7,46 @@
 //
 
 import UIKit
-
+import KRProgressHUD
 class AddItemViewController: UIViewController {
-
+    
+    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var nameTextFiled: UITextField!
+    
+    @IBOutlet weak var extraInfoTextField: UITextField!
+    
+    @IBOutlet weak var quantityTextField: UITextField!
+    
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    var shoppingList: ShoppingList!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        if nameTextFiled.text != "" && priceTextField.text != "" {
+                saveItem()
+        } else {
+            KRProgressHUD.showWarning(message: "Empty fields!")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    // saving item
+    func saveItem() {
+        let shoppingItem = ShoppingItem(_name: nameTextFiled.text!, _info: extraInfoTextField.text!, _quantity: quantityTextField.text!, _price: Float(priceTextField.text!)!, _shoppingListId: shoppingList.id)
+        shoppingItem.saveItemInBackground(shoppingItem: shoppingItem) {(error) in
+            if error != nil {
+                KRProgressHUD.showError(message: "Error saving shopping item")
+                return
+            }
+        }
+    }
 }
